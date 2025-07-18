@@ -12,12 +12,12 @@ import TextSection from "../components/TextSection.astro";
     <title>Demo Night - Where Ideas Come to Life</title>
   </head>
   <body
-    class="h-screen bg-gradient-to-br from-blue-400 via-purple-300 to-indigo-400 text-gray-700"
+    class="h-screen bg-gradient-to-br from-blue-400 via-purple-300 to-indigo-400 flex items-center justify-center text-purple-950"
   >
-    <div class="flex flex-col items-center justify-center h-full gap-8">
-      <div
-        class="definition mx-auto w-96 border-2 border-black rounded-lg px-5 py-4"
-      >
+    <div
+      class="flex flex-col items-center justify-center gap-10 bg-white/90 rounded-3xl shadow-lg w-fit px-8 py-10"
+    >
+      <div class="w-96">
         <h1 class="text-4xl font-extrabold pb-2">DEMO NIGHT</h1>
         <h4 class="flex items-center gap-2 text-lg pb-3">
           <em>noun</em>
@@ -31,7 +31,7 @@ import TextSection from "../components/TextSection.astro";
         </p>
       </div>
       <div class="flex flex-col gap-8 w-96 px-1">
-        <TextSection title="When is it happening?">
+        <TextSection icon="📆" title="When is it happening?">
           The next demo night is on
           <span class="font-semibold text-purple-700">August 30th, 2025</span> at
           <span class="font-semibold text-purple-700">7:00 PM</span> at the
@@ -43,13 +43,13 @@ import TextSection from "../components/TextSection.astro";
             Spellbook offices</a
           >.
         </TextSection>
-        <TextSection title="How can I sign up to present / attend?">
+        <TextSection icon="✅" title="How can I sign up to present / attend?">
           Signing up is easy! Just
           <a href="https://lu.ma/jbd9nlls" target="_blank" class="font-semibold"
             >register here</a
           >. Either way, we'll send you an email with all the details.
         </TextSection>
-        <TextSection title="What are the rules?">
+        <TextSection icon="📏" title="What are the rules?">
           You can present about anything you want, as long as it's technical in
           nature, and you built or created it in some way. Presentations should
           be about 6-8 minutes long, and no more than ten. Other than that, it
