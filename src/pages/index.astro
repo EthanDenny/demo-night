@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import TextSection from "../components/TextSection.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body
+    class="h-screen bg-gradient-to-br from-blue-400 via-purple-300 to-indigo-400"
+  >
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <div
+        class="definition mx-auto w-96 border-2 border-black rounded-lg px-5 py-4"
+      >
+        <h1 class="text-4xl font-extrabold pb-2">DEMO NIGHT</h1>
+        <h4 class="flex items-center gap-2 text-lg pb-3">
+          <em>noun</em>
+          <span>|</span>
+          <em>/ˈdemō nīt/</em>
+        </h4>
+        <p class="text-lg">
+          A place to kick back and watch developers, designers, and other tech
+          people present what they've been working on. It's a chance to share
+          ideas, get feedback, and see something cool!
+        </p>
+      </div>
+      <TextSection title="When is it happening?">
+        The next demo night is on
+        <span class="font-semibold">August 30th, 2025</span> at
+        <span class="font-semibold">7:00 PM</span> at the
+        <a
+          href="https://maps.app.goo.gl/GN3gShd8zY1ohDFp7"
+          target="_blank"
+          class="font-semibold"
+        >
+          Spellbook offices</a
+        >.
+      </TextSection>
+      <TextSection title="How can I sign up to present / attend?">
+        Signing up is easy! Just
+        <a href="https://lu.ma/jbd9nlls" target="_blank" class="font-semibold"
+          >register here</a
+        >. Either way, we'll send you an email with all the details.
+      </TextSection>
+      <TextSection title="What are the rules?">
+        You can present about anything you want, as long as it's technical in
+        nature, and you built or created it in some way. Presentations should be
+        about 6-8 minutes long, and no more than ten. Other than that, it can be
+        anything you want - it's up to you!
+      </TextSection>
+      <div class="text-sm w-96">
+        Brought to you by <a href="https://ethandenny.dev" target="_blank"
+          ><span class="font-semibold text-gray-800">Ethan Denny</span></a
+        >.
+      </div>
+    </div>
+  </body>
+</html>
