@@ -9,56 +9,91 @@ import TextSection from "../components/TextSection.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Demo Night - Where Ideas Come to Life</title>
+    <title>DEMO NIGHT - WHERE IDEAS COME TO LIFE</title>
   </head>
-  <body
-    class="h-screen bg-gradient-to-br from-blue-400 via-purple-300 to-indigo-400 flex items-center justify-center text-purple-950"
-  >
-    <div
-      class="flex flex-col items-center justify-center gap-10 bg-white/90 rounded-3xl shadow-lg w-fit px-8 py-10"
-    >
-      <div class="w-96">
-        <h1 class="text-4xl font-extrabold pb-2">DEMO NIGHT</h1>
-        <h4 class="flex items-center gap-2 text-lg pb-3">
-          <em>noun</em>
-          <span>|</span>
-          <em>/ˈdemō nīt/</em>
-        </h4>
-        <p class="text-lg">
-          A place to kick back and watch developers, designers, and other tech
-          people present what they've been working on. It's a chance to share
-          ideas, get feedback, and see something cool!
+  <body class="min-h-screen bg-gray-100 text-gray-900 p-8">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header Block -->
+      <div class="brutalist-box p-12 mb-12">
+        <div class="border-b-8 border-gray-900 pb-8 mb-8">
+          <h1 class="text-8xl font-black tracking-wider mb-4 text-gray-900">
+            DEMO NIGHT
+          </h1>
+          <div
+            class="flex items-center gap-6 text-2xl font-black uppercase tracking-widest"
+          >
+            <span
+              class="bg-green-600 text-white px-4 py-2 border-4 border-green-800"
+              >NOUN</span
+            >
+            <span class="text-4xl text-gray-700">|</span>
+            <span
+              class="bg-green-600 text-white px-4 py-2 border-4 border-green-800"
+              >/ˈdemō nīt/</span
+            >
+          </div>
+        </div>
+        <p
+          class="text-2xl font-black leading-relaxed uppercase tracking-wide text-gray-800"
+        >
+          A PLACE TO KICK BACK AND WATCH DEVELOPERS, DESIGNERS, AND OTHER TECH
+          PEOPLE PRESENT WHAT THEY'VE BEEN WORKING ON. IT'S A CHANCE TO SHARE
+          IDEAS, GET FEEDBACK, AND SEE SOMETHING COOL!
         </p>
       </div>
-      <div class="flex flex-col gap-8 w-96 px-1">
-        <TextSection icon="📆" title="When is it happening?">
-          The next demo night is on
-          <span class="font-semibold text-purple-700">August 30th, 2025</span> at
-          <span class="font-semibold text-purple-700">7:00 PM</span> at the
+
+      <!-- Content Sections -->
+      <div class="grid gap-8">
+        <TextSection icon="📆" title="WHEN IS IT HAPPENING?">
+          THE NEXT DEMO NIGHT IS ON
+          <span
+            class="bg-green-500 text-white px-3 py-1 border-4 border-green-700 font-black"
+            >AUGUST 30TH, 2025</span
+          > AT
+          <span
+            class="bg-green-500 text-white px-3 py-1 border-4 border-green-700 font-black"
+            >7:00 PM</span
+          > AT THE
           <a
             href="https://maps.app.goo.gl/GN3gShd8zY1ohDFp7"
             target="_blank"
-            class="font-semibold"
+            class="brutalist-button inline-block ml-2"
           >
-            Spellbook offices</a
-          >.
+            SPELLBOOK OFFICES
+          </a>
         </TextSection>
-        <TextSection icon="✅" title="How can I sign up to present / attend?">
-          Signing up is easy! Just
-          <a href="https://lu.ma/jbd9nlls" target="_blank" class="font-semibold"
-            >register here</a
-          >. Either way, we'll send you an email with all the details.
+
+        <TextSection icon="✅" title="HOW CAN I SIGN UP TO PRESENT / ATTEND?">
+          SIGNING UP IS EASY! JUST
+          <a
+            href="https://lu.ma/jbd9nlls"
+            target="_blank"
+            class="brutalist-button inline-block mx-2"
+          >
+            REGISTER HERE
+          </a>
+          EITHER WAY, WE'LL SEND YOU AN EMAIL WITH ALL THE DETAILS.
         </TextSection>
-        <TextSection icon="📏" title="What are the rules?">
-          You can present about anything you want, as long as it's technical in
-          nature, and you built or created it in some way. Presentations should
-          be about 6-8 minutes long, and no more than ten. Other than that, it
-          can be anything you want - it's up to you!
+
+        <TextSection icon="📏" title="WHAT ARE THE RULES?">
+          YOU CAN PRESENT ABOUT ANYTHING YOU WANT, AS LONG AS IT'S TECHNICAL IN
+          NATURE, AND YOU BUILT OR CREATED IT IN SOME WAY. PRESENTATIONS SHOULD
+          BE ABOUT 6-8 MINUTES LONG, AND NO MORE THAN TEN. OTHER THAN THAT, IT
+          CAN BE ANYTHING YOU WANT - IT'S UP TO YOU!
         </TextSection>
-        <div class="text-sm">
-          Brought to you by <a href="https://ethandenny.dev" target="_blank"
-            ><span class="font-semibold">Ethan Denny</span></a
-          >.
+      </div>
+
+      <!-- Footer Block -->
+      <div class="mt-16 brutalist-box p-8">
+        <div class="text-xl font-black uppercase tracking-widest text-center">
+          BROUGHT TO YOU BY
+          <a
+            href="https://ethandenny.dev"
+            target="_blank"
+            class="brutalist-button ml-2"
+          >
+            ETHAN DENNY
+          </a>
         </div>
       </div>
     </div>
