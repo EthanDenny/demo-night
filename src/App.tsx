@@ -37,8 +37,8 @@ function App() {
           </CardHeader>
           <CardContent>
             <p>
-              A get-together with short talks & demos, by professionals, for
-              professionals.
+              A meet up focused around short talks & demos, by professionals,
+              for professionals.
             </p>
           </CardContent>
         </Card>
@@ -74,9 +74,9 @@ function App() {
               <AccordionItem value="all-open">
                 <AccordionHeader>When is it?</AccordionHeader>
                 <AccordionContent>
-                  The next demo night is on{" "}
+                  The next Demo Night is on{" "}
                   <span className="font-bold">August 30th, 2025</span> at{" "}
-                  <span className="font-bold">7:00 PM</span> at the{" "}
+                  <span className="font-bold">7:00 PM</span> in the{" "}
                   <Link href="https://maps.app.goo.gl/GN3gShd8zY1ohDFp7">
                     Spellbook office
                   </Link>
@@ -96,21 +96,24 @@ function App() {
               <AccordionItem value="all-open">
                 <AccordionHeader>What are the rules?</AccordionHeader>
                 <AccordionContent>
-                  <p>
-                    You can present about anything you want, as long as it's
-                    technical in nature, and you built or created it in some
-                    way.
-                  </p>
-                  <p>
-                    Presentations should be about 6-8 minutes long, and no more
-                    than ten. Other than that, it can be anything you want -
-                    from functional programming, a neat AI tool you've been
-                    using, or about a
-                    <code className="px-1 italic">
-                      [insert niche topic here]
-                    </code>{" "}
-                    that you've really interested in.
-                  </p>
+                  <ul className="list-disc pl-4 space-y-2">
+                    <li>
+                      You can present about anything you want, as long as it's
+                      technical in nature, and you built or created it in some
+                      way.
+                    </li>
+                    <li>
+                      Presentations should be about 6-8 minutes long, and no
+                      more than ten.
+                    </li>
+                    <li>
+                      Other than that, it can be anything you want – from
+                      functional programming, a neat AI tool you've been using,
+                      or about an{" "}
+                      <code className="italic">[insert niche topic here]</code>{" "}
+                      that you're really interested in.
+                    </li>
+                  </ul>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="all-open">
@@ -125,9 +128,12 @@ function App() {
               <AccordionItem value="all-open">
                 <AccordionHeader>I want to know more!</AccordionHeader>
                 <AccordionContent>
-                  Come chat with us in the{" "}
+                  <Link href="mailto:ethandenny@protonmail.com">
+                    Send Ethan an email
+                  </Link>{" "}
+                  or come chat with us in the{" "}
                   <Link href="http://discord.ctsnl.ca/">
-                    CTSNL Discord server
+                    CTS-NL Discord server
                   </Link>
                   , we're happy to answer questions and share more details.
                 </AccordionContent>
