@@ -37,10 +37,8 @@ function App() {
           </CardHeader>
           <CardContent>
             <p>
-              A place to kick back and watch developers, designers, and other
-              tech people present what they've been working on. It's a chance to
-              share ideas, get feedback, and see something cool built by the
-              community!
+              A meet up focused around short talks & demos, by professionals,
+              for professionals.
             </p>
           </CardContent>
         </Card>
@@ -49,9 +47,9 @@ function App() {
             <h2 className="text-2xl">Do you enjoy:</h2>
             <ul className="flex flex-col gap-2 font-medium">
               {[
-                "Listening to people talk about something they're working on?",
-                "Getting feedback on your own projects?",
+                "Listening to people talk about cool stuff?",
                 "Learning about new ideas, tech, and tools?",
+                "Building your own cool stuff?",
               ].map((text) => (
                 <li className="flex items-center gap-3" key={text}>
                   <Checkbox checked />
@@ -60,12 +58,11 @@ function App() {
               ))}
             </ul>
             <h4 className="text-lg">
-              If you answered yes to any of these, you'll probably enjoy Demo
-              Night!
+              Then Demo Night is for <span className="italic">you.</span>
             </h4>
             <p className="text-sm">
-              Demo Night is a place to share ideas, get feedback, and see
-              something cool built by the community!
+              Share ideas, get feedback, and see what your likeminded community
+              is up to.
             </p>
           </section>
           <section>
@@ -77,11 +74,11 @@ function App() {
               <AccordionItem value="all-open">
                 <AccordionHeader>When is it?</AccordionHeader>
                 <AccordionContent>
-                  The next demo night is on{" "}
+                  The next Demo Night is on{" "}
                   <span className="font-bold">August 30th, 2025</span> at{" "}
-                  <span className="font-bold">7:00 PM</span> at the{" "}
+                  <span className="font-bold">7:00 PM</span> in the{" "}
                   <Link href="https://maps.app.goo.gl/GN3gShd8zY1ohDFp7">
-                    Spellbook offices
+                    Spellbook office
                   </Link>
                   .
                 </AccordionContent>
@@ -91,20 +88,32 @@ function App() {
                   How can I sign up to present / attend?
                 </AccordionHeader>
                 <AccordionContent>
-                  Signing up is easy! Just{" "}
-                  <Link href="https://lu.ma/jbd9nlls">register here</Link>. No
-                  matter if you're presenting or only coming to watch, we'll
+                  Just <Link href="https://lu.ma/jbd9nlls">register here</Link>.
+                  No matter if you're presenting or only coming to watch, we'll
                   send you an email with all the details.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="all-open">
                 <AccordionHeader>What are the rules?</AccordionHeader>
                 <AccordionContent>
-                  You can present about anything you want, as long as it's
-                  technical in nature, and you built or created it in some way.
-                  Presentations should be about 6-8 minutes long, and no more
-                  than ten. Other than that, it can be anything you want - it's
-                  up to you!
+                  <ul className="list-disc pl-4 space-y-2">
+                    <li>
+                      You can present about anything you want, as long as it's
+                      technical in nature, and you built or created it in some
+                      way.
+                    </li>
+                    <li>
+                      Presentations should be about 6-8 minutes long, and no
+                      more than ten.
+                    </li>
+                    <li>
+                      Other than that, it can be anything you want – from
+                      functional programming, a neat AI tool you've been using,
+                      or about an{" "}
+                      <code className="italic">[insert niche topic here]</code>{" "}
+                      that you're really interested in.
+                    </li>
+                  </ul>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="all-open">
@@ -116,12 +125,25 @@ function App() {
                   <Link href="https://spellbook.legal">Spellbook</Link>.
                 </AccordionContent>
               </AccordionItem>
+              <AccordionItem value="all-open">
+                <AccordionHeader>I want to know more!</AccordionHeader>
+                <AccordionContent>
+                  <Link href="mailto:ethandenny@protonmail.com">
+                    Send Ethan an email
+                  </Link>{" "}
+                  or come chat with us in the{" "}
+                  <Link href="http://discord.ctsnl.ca/">
+                    CTS-NL Discord server
+                  </Link>
+                  , we're happy to answer questions and share more details.
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </section>
         </div>
       </div>
       <div className="hidden lg:block fixed right-0 bottom-0 text-xs opacity-20">
-        <Link href="https://wiki.teamfortress.com/wiki/Community_Demoman_strategy#/media/File:Eyelander.png">
+        <Link href="https://www.youtube.com/watch?v=han3AfjH210">
           No, not this guy
         </Link>
       </div>
