@@ -19,7 +19,7 @@ import { Link } from "./components/link";
 function App() {
   return (
     // Margin trick lets us start halfway through a grid cell
-    <div className="-mt-4 pt-12 pb-8 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808030_1px,transparent_1px)] [background-size:40px_40px] bg-secondary-background">
+    <div className="-mt-4 pt-12 px-6 pb-10 min-h-fit h-[calc(100vh+1rem)] bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808030_1px,transparent_1px)] [background-size:40px_40px] bg-secondary-background">
       <div className="flex flex-col items-center gap-8">
         <Card className="w-full max-w-2xl">
           <CardHeader>
@@ -119,6 +119,11 @@ function App() {
             </Accordion>
           </section>
         </div>
+      </div>
+      <div className="hidden lg:block fixed right-0 bottom-0 text-xs opacity-20">
+        <Link href="https://wiki.teamfortress.com/wiki/Community_Demoman_strategy#/media/File:Eyelander.png">
+          No, not this guy
+        </Link>
       </div>
     </div>
   );
