@@ -18,6 +18,8 @@ import { AccordionHeader } from "../components/accordion-header";
 import { Link } from "../components/link";
 import { useRouter } from "@tanstack/react-router";
 
+const LUMA_URL = "https://luma.com/eihyagp4";
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -36,7 +38,7 @@ export default function Index() {
             <span className="italic">{`/ˈdemō nīt/`}</span>
           </CardDescription>
           <CardAction>
-            <Link href="https://lu.ma/jbd9nlls">
+            <Link href={LUMA_URL}>
               <Button>Register now</Button>
             </Link>
           </CardAction>
@@ -120,9 +122,9 @@ export default function Index() {
                 How can I sign up to present / attend?
               </AccordionHeader>
               <AccordionContent>
-                Just <Link href="https://lu.ma/jbd9nlls">register here</Link>.
-                No matter if you're presenting or only coming to watch, we'll
-                send you an email with all the details.
+                Just <Link href={LUMA_URL}>register here</Link>. No matter if
+                you're presenting or only coming to watch, we'll send you an
+                email with all the details.
               </AccordionContent>
             </AccordionItem>
             <img
