@@ -168,7 +168,10 @@ export default function Index() {
                 <Link href="https://jackharrhy.dev">Jack Harrhy</Link>, and the
                 fine folks at{" "}
                 <Link href="https://spellbook.com">Spellbook</Link>. Photos by{" "}
-                <Link href="https://ecrann.dev/">Ethan Crann</Link>.
+                <Link href="https://www.instagram.com/thecrypticcanadian/">
+                  Ethan Crann
+                </Link>
+                .
               </AccordionContent>
             </AccordionItem>
           </Accordion>
