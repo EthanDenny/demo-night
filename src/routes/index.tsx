@@ -155,31 +155,20 @@ export default function Index() {
                 </ul>
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="all-open">
-              <AccordionHeader>Who's organizing it?</AccordionHeader>
-              <AccordionContent>
-                Demo Night is brought to you by{" "}
-                <Link href="https://ethandenny.dev">Ethan Denny</Link> and the
-                fine folks at <Link href="https://ctsnl.ca">CTS-NL</Link> and{" "}
-                <Link href="https://spellbook.legal">Spellbook</Link>.
-              </AccordionContent>
-            </AccordionItem>
             <img
               src="images/DSCF1088.jpg"
               alt="Photo of Ethan Denny"
               className="rounded-base w-full"
             />
             <AccordionItem value="all-open">
-              <AccordionHeader>I want to know more!</AccordionHeader>
+              <AccordionHeader>Who's organizing it?</AccordionHeader>
               <AccordionContent>
-                <Link href="mailto:ethandenny@protonmail.com">
-                  Send Ethan an email
-                </Link>{" "}
-                or come chat with us in the{" "}
-                <Link href="http://discord.ctsnl.ca/">
-                  CTS-NL Discord server
-                </Link>
-                , we're happy to answer questions and share more details.
+                Demo Night is brought to you by{" "}
+                <Link href="https://ethandenny.dev">Ethan Denny</Link>,{" "}
+                <Link href="https://jackharrhy.dev">Jack Harrhy</Link>, and the
+                fine folks at{" "}
+                <Link href="https://spellbook.com">Spellbook</Link>. Photos by{" "}
+                <Link href="https://ecrann.dev/">Ethan Crann</Link>.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
