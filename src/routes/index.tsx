@@ -114,7 +114,11 @@ export default function Index() {
                 >
                   gallery
                 </button>{" "}
-                of past events.
+                of past events, as well as on{" "}
+                <Link href="https://jack.camera/demo-night-2-nov2025/">
+                  jack.camera/demo-night-2-nov2025
+                </Link>
+                .
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="all-open">
