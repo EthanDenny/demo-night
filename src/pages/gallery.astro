@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import sizeOf from 'image-size';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -43,21 +46,40 @@ const imageFiles = [
   'DSCF1863.jpg',
 ];
 
+// Read image dimensions at build time and calculate aspect ratios
+const imagesWithDimensions = imageFiles.map((filename) => {
+  const imagePath = join(process.cwd(), 'public', 'images', filename);
+  const imageBuffer = readFileSync(imagePath);
+  const dimensions = sizeOf(imageBuffer);
+  const aspectRatio = dimensions.width && dimensions.height 
+    ? `${dimensions.width}/${dimensions.height}`
+    : '3/2'; // fallback to 3:2 if dimensions can't be read
+  return {
+    filename,
+    aspectRatio,
+  };
+});
+
 // Shuffle the images
-const shuffledImages = [...imageFiles].sort(() => Math.random() - 0.5);
+const shuffledImages = [...imagesWithDimensions].sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout title="Gallery | Demo Night">
   <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-    {shuffledImages.map((filename) => (
+    {shuffledImages.map((image) => (
       <div class="break-inside-avoid mb-4">
-        <img
-          src={`${baseUrl}images/${filename}`}
-          alt={filename}
-          class="w-full rounded shadow-md hover:shadow-lg transition-shadow duration-200"
-        />
+        <div 
+          class="w-full rounded overflow-hidden"
+          style={`aspect-ratio: ${image.aspectRatio};`}
+        >
+          <img
+            src={`${baseUrl}images/${image.filename}`}
+            alt={image.filename}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
     ))}
   </div>
 </BaseLayout>
-
