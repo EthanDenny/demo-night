@@ -26,7 +26,7 @@ const shuffledImages = [...images].sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout title="Gallery | Demo Night">
-  <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+  <div class="pl-4 columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
     {shuffledImages.map((item) => (
       <div class="break-inside-avoid mb-4">
         <div 
