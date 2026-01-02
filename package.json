@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "astro preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --nojekyll"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
