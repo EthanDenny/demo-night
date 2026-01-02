@@ -6,7 +6,4 @@ interface LinkProps {
 const { href } = Astro.props;
 ---
 
-<a href={href} target="_blank" class="font-bold underline">
-  <slot />
-</a>
-
+<a href={href} target="_blank" class="font-bold underline"><slot /></a>
