@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardAction,
+} from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Checkbox } from '../components/ui/checkbox';
+import { AccordionSection } from '../components/accordion-section';
+import { Link } from '../components/link';
+
+const LUMA_URL = "https://luma.com/eihyagp4";
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout>
+  <div class="flex flex-col items-center gap-8">
+    <Card className="w-full max-w-2xl" client:load>
+      <CardHeader>
+        <CardTitle className="text-4xl">Demo Night</CardTitle>
+        <CardDescription className="flex items-center gap-2 text-sm">
+          <span class="italic">noun</span>
+          <span>|</span>
+          <span class="italic">{`/ˈdemō nīt/`}</span>
+        </CardDescription>
+        <CardAction>
+          <Link href={LUMA_URL}>
+            <Button client:load>Register now</Button>
+          </Link>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <p>
+          A meet up focused around short talks & demos, by professionals, for
+          professionals.
+        </p>
+      </CardContent>
+    </Card>
+    <div class="flex flex-col justify-start gap-8 w-full max-w-2xl px-[calc(1.5rem+var(--spacing-boxShadowX))]">
+      <section>
+        <img
+          src={`${baseUrl}images/DSCF1306.jpg`}
+          alt="Photo of a presentation at Demo Night"
+          class="rounded-base w-full"
+        />
+      </section>
+      <section class="flex flex-col gap-4">
+        <h2 class="text-2xl">Do you enjoy:</h2>
+        <ul class="flex flex-col gap-2 font-medium">
+          <li class="flex items-center gap-3">
+            <Checkbox checked client:load />
+            <span>Listening to people talk about cool stuff?</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <Checkbox checked client:load />
+            <span>Learning about new ideas, tech, and tools?</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <Checkbox checked client:load />
+            <span>Building your own cool stuff?</span>
+          </li>
+        </ul>
+        <h4 class="text-lg">
+          Then Demo Night is for <span class="italic">you.</span>
+        </h4>
+        <p class="text-sm">
+          Share ideas, get feedback, and see what your likeminded community is
+          up to.
+        </p>
+      </section>
+      <section>
+        <AccordionSection baseUrl={baseUrl} client:only="react" />
+      </section>
+    </div>
+  </div>
+</BaseLayout>

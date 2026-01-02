@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Get all images from the public/images directory
+const imageFiles = [
+  'DSCF1088.jpg',
+  'DSCF1118.jpg',
+  'DSCF1124.jpg',
+  'DSCF1132.jpg',
+  'DSCF1142.jpg',
+  'DSCF1143.jpg',
+  'DSCF1168.jpg',
+  'DSCF1193.jpg',
+  'DSCF1198.jpg',
+  'DSCF1203.jpg',
+  'DSCF1211.jpg',
+  'DSCF1214.jpg',
+  'DSCF1230.jpg',
+  'DSCF1263.jpg',
+  'DSCF1293.jpg',
+  'DSCF1298.jpg',
+  'DSCF1306.jpg',
+  'DSCF1350.jpg',
+  'DSCF1365.jpg',
+  'DSCF1398.jpg',
+  'DSCF1458.jpg',
+  'DSCF1546.jpg',
+  'DSCF1571.jpg',
+  'DSCF1597.jpg',
+  'DSCF1647.jpg',
+  'DSCF1662.jpg',
+  'DSCF1676.jpg',
+  'DSCF1679.jpg',
+  'DSCF1687.jpg',
+  'DSCF1740.jpg',
+  'DSCF1750.jpg',
+  'DSCF1770.jpg',
+  'DSCF1773.jpg',
+  'DSCF1780.jpg',
+  'DSCF1805.jpg',
+  'DSCF1863.jpg',
+];
+
+// Shuffle the images
+const shuffledImages = [...imageFiles].sort(() => Math.random() - 0.5);
+---
+
+<BaseLayout title="Gallery | Demo Night">
+  <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+    {shuffledImages.map((filename) => (
+      <div class="break-inside-avoid mb-4">
+        <img
+          src={`${baseUrl}images/${filename}`}
+          alt={filename}
+          class="w-full rounded shadow-md hover:shadow-lg transition-shadow duration-200"
+        />
+      </div>
+    ))}
+  </div>
+</BaseLayout>
+
