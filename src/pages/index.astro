@@ -7,7 +7,7 @@ import CardDescription from '../components/ui/card-description.astro';
 import CardContent from '../components/ui/card-content.astro';
 import CardAction from '../components/ui/card-action.astro';
 import Button from '../components/ui/button.astro';
-import Checkbox from '../components/ui/checkbox.astro';
+import Checkmark from '../components/ui/checkmark.astro';
 import AccordionSection from '../components/accordion-section.astro';
 import Link from '../components/link.astro';
 
@@ -50,15 +50,15 @@ const baseUrl = import.meta.env.BASE_URL;
         <h2 class="text-2xl">Do you enjoy:</h2>
         <ul class="flex flex-col gap-2 font-medium">
           <li class="flex items-center gap-3">
-            <Checkbox checked />
+            <Checkmark />
             <span>Listening to people talk about cool stuff?</span>
           </li>
           <li class="flex items-center gap-3">
-            <Checkbox checked />
+            <Checkmark />
             <span>Learning about new ideas, tech, and tools?</span>
           </li>
           <li class="flex items-center gap-3">
-            <Checkbox checked />
+            <Checkmark />
             <span>Building your own cool stuff?</span>
           </li>
         </ul>

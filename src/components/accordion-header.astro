@@ -1,13 +1,5 @@
----
-import AccordionTrigger from "./ui/accordion-trigger.astro";
-
-interface AccordionHeaderProps {
-  className?: string;
-}
-
-const { className = "" } = Astro.props;
----
-
-<AccordionTrigger className={`pointer-events-none [&>svg]:hidden ${className}`}>
+<div
+  class="flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border w-full bg-main p-4 font-heading rounded-b-none border-b-2"
+>
   <slot />
-</AccordionTrigger>
+</div>

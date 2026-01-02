@@ -1,17 +1,8 @@
 ---
-interface AccordionContentProps {
-  className?: string;
-}
-
-const { className = "" } = Astro.props;
 ---
 
-<div
-  data-accordion-content
-  data-state="closed"
-  class={`overflow-hidden rounded-b-base bg-background text-sm font-base transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down`}
->
-  <div class={`p-4 ${className}`}>
+<div class={`overflow-hidden rounded-b-base bg-background text-sm font-base`}>
+  <div class="p-4">
     <slot />
   </div>
 </div>

@@ -1,79 +1,11 @@
 ---
 interface AccordionProps {
-  type?: "single" | "multiple";
-  defaultValue?: string[];
   className?: string;
 }
 
-const { type = "multiple", defaultValue = [], className = "" } = Astro.props;
-const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
+const { className = "" } = Astro.props;
 ---
 
-<div
-  class={`accordion ${className}`}
-  data-accordion-id={accordionId}
-  data-type={type}
-  data-default-value={JSON.stringify(defaultValue)}
->
+<div class={`accordion ${className}`}>
   <slot />
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const accordion = document.querySelector(`[data-accordion-id="${accordionId}"]`);
-    if (!accordion) return;
-
-    const type = accordion.getAttribute("data-type") || "multiple";
-    const defaultValue = JSON.parse(accordion.getAttribute("data-default-value") || "[]");
-    const items = accordion.querySelectorAll("[data-accordion-item]");
-
-    // Initialize default open items
-    items.forEach((item) => {
-      const value = item.getAttribute("data-value");
-      if (defaultValue.includes(value)) {
-        item.setAttribute("data-state", "open");
-        const content = item.querySelector("[data-accordion-content]");
-        const trigger = item.querySelector("[data-accordion-trigger]");
-        if (content) content.setAttribute("data-state", "open");
-        if (trigger) trigger.setAttribute("data-state", "open");
-      } else {
-        item.setAttribute("data-state", "closed");
-        const content = item.querySelector("[data-accordion-content]");
-        const trigger = item.querySelector("[data-accordion-trigger]");
-        if (content) content.setAttribute("data-state", "closed");
-        if (trigger) trigger.setAttribute("data-state", "closed");
-      }
-    });
-
-    // Handle clicks
-    accordion.addEventListener("click", (e) => {
-      const trigger = (e.target as HTMLElement).closest("[data-accordion-trigger]");
-      if (!trigger) return;
-
-      const item = trigger.closest("[data-accordion-item]");
-      if (!item) return;
-
-      const value = item.getAttribute("data-value");
-      const currentState = item.getAttribute("data-state");
-      const newState = currentState === "open" ? "closed" : "open";
-
-      if (type === "single") {
-        // Close all other items
-        items.forEach((otherItem) => {
-          if (otherItem !== item) {
-            otherItem.setAttribute("data-state", "closed");
-            const content = otherItem.querySelector("[data-accordion-content]");
-            const otherTrigger = otherItem.querySelector("[data-accordion-trigger]");
-            if (content) content.setAttribute("data-state", "closed");
-            if (otherTrigger) otherTrigger.setAttribute("data-state", "closed");
-          }
-        });
-      }
-
-      item.setAttribute("data-state", newState);
-      const content = item.querySelector("[data-accordion-content]");
-      if (content) content.setAttribute("data-state", newState);
-      trigger.setAttribute("data-state", newState);
-    });
-  });
-</script>

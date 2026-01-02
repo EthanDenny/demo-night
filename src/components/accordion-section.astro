@@ -14,12 +14,8 @@ const { baseUrl } = Astro.props;
 const LUMA_URL = "https://luma.com/eihyagp4";
 ---
 
-<Accordion
-  type="multiple"
-  defaultValue={["all-open"]}
-  className="flex flex-col gap-8"
->
-  <AccordionItem value="all-open">
+<Accordion className="flex flex-col gap-8">
+  <AccordionItem>
     <AccordionHeader>When is it?</AccordionHeader>
     <AccordionContent>
       Demo Night 2 is on <span class="font-bold">November 22nd</span> at{" "}
@@ -35,7 +31,7 @@ const LUMA_URL = "https://luma.com/eihyagp4";
     alt="Photo of the Spellbook office"
     class="rounded-base w-full"
   />
-  <AccordionItem value="all-open">
+  <AccordionItem>
     <AccordionHeader>What are the vibes like?</AccordionHeader>
     <AccordionContent>
       See more pictures in our{" "}
@@ -52,7 +48,7 @@ const LUMA_URL = "https://luma.com/eihyagp4";
       .
     </AccordionContent>
   </AccordionItem>
-  <AccordionItem value="all-open">
+  <AccordionItem>
     <AccordionHeader>
       How can I sign up to present / attend?
     </AccordionHeader>
@@ -67,7 +63,7 @@ const LUMA_URL = "https://luma.com/eihyagp4";
     alt="Photo of a presentation at Demo Night"
     class="rounded-base w-full"
   />
-  <AccordionItem value="all-open">
+  <AccordionItem>
     <AccordionHeader>What are the rules?</AccordionHeader>
     <AccordionContent>
       <ul class="list-disc pl-4 space-y-2">
@@ -93,7 +89,7 @@ const LUMA_URL = "https://luma.com/eihyagp4";
     alt="Photo of Ethan Denny"
     class="rounded-base w-full"
   />
-  <AccordionItem value="all-open">
+  <AccordionItem>
     <AccordionHeader>Who's organizing it?</AccordionHeader>
     <AccordionContent>
       Demo Night is brought to you by{" "}
