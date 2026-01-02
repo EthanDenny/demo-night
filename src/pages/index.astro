@@ -10,6 +10,8 @@ import Button from '../components/ui/button.astro';
 import Checkmark from '../components/ui/checkmark.astro';
 import AccordionSection from '../components/accordion-section.astro';
 import Link from '../components/link.astro';
+import { Image } from 'astro:assets';
+import presentationImage from '../assets/images/DSCF1306.jpg';
 
 const LUMA_URL = "https://luma.com/eihyagp4";
 const baseUrl = import.meta.env.BASE_URL;
@@ -40,10 +42,13 @@ const baseUrl = import.meta.env.BASE_URL;
     </Card>
     <div class="flex flex-col justify-start gap-8 w-full max-w-2xl px-[calc(1.5rem+var(--spacing-boxShadowX))]">
       <section>
-        <img
-          src={`${baseUrl}images/DSCF1306.jpg`}
+        <Image
+          src={presentationImage}
           alt="Photo of a presentation at Demo Night"
           class="rounded-base w-full"
+          width={1200}
+          quality={85}
+          format="webp"
         />
       </section>
       <section class="flex flex-col gap-4">

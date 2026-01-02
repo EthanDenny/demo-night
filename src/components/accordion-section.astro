@@ -4,6 +4,12 @@ import AccordionItem from "./ui/accordion-item.astro";
 import AccordionContent from "./ui/accordion-content.astro";
 import AccordionHeader from "./accordion-header.astro";
 import Link from "./link.astro";
+import { Image } from 'astro:assets';
+
+// Import the specific images used in this component
+import officeImage from '../assets/images/DSCF1597.jpg';
+import presentationImage from '../assets/images/DSCF1647.jpg';
+import ethanImage from '../assets/images/DSCF1088.jpg';
 
 interface AccordionSectionProps {
   baseUrl: string;
@@ -21,10 +27,13 @@ const LUMA_URL = "https://luma.com/eihyagp4";
       Demo Night 3 is coming this February!
     </AccordionContent>
   </AccordionItem>
-  <img
-    src={`${baseUrl}images/DSCF1597.jpg`}
+  <Image
+    src={officeImage}
     alt="Photo of the Spellbook office"
     class="rounded-base w-full"
+    width={1200}
+    quality={85}
+    format="webp"
   />
   <AccordionItem>
     <AccordionHeader>What are the vibes like?</AccordionHeader>
@@ -48,10 +57,13 @@ const LUMA_URL = "https://luma.com/eihyagp4";
       the details.
     </AccordionContent>
   </AccordionItem>
-  <img
-    src={`${baseUrl}images/DSCF1647.jpg`}
+  <Image
+    src={presentationImage}
     alt="Photo of a presentation at Demo Night"
     class="rounded-base w-full"
+    width={1200}
+    quality={85}
+    format="webp"
   />
   <AccordionItem>
     <AccordionHeader>What are the rules?</AccordionHeader>
@@ -74,10 +86,13 @@ const LUMA_URL = "https://luma.com/eihyagp4";
       </ul>
     </AccordionContent>
   </AccordionItem>
-  <img
-    src={`${baseUrl}images/DSCF1088.jpg`}
+  <Image
+    src={ethanImage}
     alt="Photo of Ethan Denny"
     class="rounded-base w-full"
+    width={1200}
+    quality={85}
+    format="webp"
   />
   <AccordionItem>
     <AccordionHeader>Who's organizing it?</AccordionHeader>

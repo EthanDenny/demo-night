@@ -1,80 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import sizeOf from 'image-size';
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { Image } from 'astro:assets';
 
-const baseUrl = import.meta.env.BASE_URL;
+// Import all images from assets directory using Vite glob
+const imageModules = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.jpg', { 
+  eager: true 
+});
 
-// Get all images from the public/images directory
-const imageFiles = [
-  'DSCF1088.jpg',
-  'DSCF1118.jpg',
-  'DSCF1124.jpg',
-  'DSCF1132.jpg',
-  'DSCF1142.jpg',
-  'DSCF1143.jpg',
-  'DSCF1168.jpg',
-  'DSCF1193.jpg',
-  'DSCF1198.jpg',
-  'DSCF1203.jpg',
-  'DSCF1211.jpg',
-  'DSCF1214.jpg',
-  'DSCF1230.jpg',
-  'DSCF1263.jpg',
-  'DSCF1293.jpg',
-  'DSCF1298.jpg',
-  'DSCF1306.jpg',
-  'DSCF1350.jpg',
-  'DSCF1365.jpg',
-  'DSCF1398.jpg',
-  'DSCF1458.jpg',
-  'DSCF1546.jpg',
-  'DSCF1571.jpg',
-  'DSCF1597.jpg',
-  'DSCF1647.jpg',
-  'DSCF1662.jpg',
-  'DSCF1676.jpg',
-  'DSCF1679.jpg',
-  'DSCF1687.jpg',
-  'DSCF1740.jpg',
-  'DSCF1750.jpg',
-  'DSCF1770.jpg',
-  'DSCF1773.jpg',
-  'DSCF1780.jpg',
-  'DSCF1805.jpg',
-  'DSCF1863.jpg',
-];
-
-// Read image dimensions at build time and calculate aspect ratios
-const imagesWithDimensions = imageFiles.map((filename) => {
-  const imagePath = join(process.cwd(), 'public', 'images', filename);
-  const imageBuffer = readFileSync(imagePath);
-  const dimensions = sizeOf(imageBuffer);
-  const aspectRatio = dimensions.width && dimensions.height 
-    ? `${dimensions.width}/${dimensions.height}`
-    : '3/2'; // fallback to 3:2 if dimensions can't be read
+// Convert glob results to array with filenames and image metadata
+const images = Object.entries(imageModules).map(([path, module]) => {
+  const filename = path.split('/').pop() || '';
+  const image = module.default;
+  const aspectRatio = image.width && image.height 
+    ? `${image.width}/${image.height}`
+    : '3/2';
   return {
     filename,
+    image,
     aspectRatio,
   };
 });
 
 // Shuffle the images
-const shuffledImages = [...imagesWithDimensions].sort(() => Math.random() - 0.5);
+const shuffledImages = [...images].sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout title="Gallery | Demo Night">
   <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-    {shuffledImages.map((image) => (
+    {shuffledImages.map((item) => (
       <div class="break-inside-avoid mb-4">
         <div 
           class="w-full rounded overflow-hidden"
-          style={`aspect-ratio: ${image.aspectRatio};`}
+          style={`aspect-ratio: ${item.aspectRatio};`}
         >
-          <img
-            src={`${baseUrl}images/${image.filename}`}
-            alt={image.filename}
+          <Image
+            src={item.image}
+            alt={item.filename}
+            width={1200}
+            quality={85}
+            format="webp"
             class="w-full h-full object-cover"
             loading="lazy"
           />
