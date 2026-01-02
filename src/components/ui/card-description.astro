@@ -1,0 +1,18 @@
+---
+import { cn } from "@/utils";
+
+interface CardDescriptionProps {
+  className?: string;
+}
+
+const { className = "", ...rest } = Astro.props;
+---
+
+<div
+  data-slot="card-description"
+  class={cn("text-sm font-base", className)}
+  {...rest}
+>
+  <slot />
+</div>
+

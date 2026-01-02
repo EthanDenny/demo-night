@@ -1,0 +1,30 @@
+---
+interface AccordionTriggerProps {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<button
+  data-accordion-trigger
+  data-state="closed"
+  class={`flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border focus-visible:ring-[3px] w-full bg-main p-4 font-heading transition-all [&[data-state=open]>svg]:rotate-180 data-[state=open]:rounded-b-none data-[state=open]:border-b-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer border-b-2 ${className}`}
+>
+  <slot />
+  <svg
+    class="pointer-events-none size-5 shrink-0 transition-transform duration-200"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+</button>
+

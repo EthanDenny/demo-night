@@ -1,17 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardAction,
-} from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Checkbox } from '../components/ui/checkbox';
-import { AccordionSection } from '../components/accordion-section';
-import { Link } from '../components/link';
+import Card from '../components/ui/card.astro';
+import CardHeader from '../components/ui/card-header.astro';
+import CardTitle from '../components/ui/card-title.astro';
+import CardDescription from '../components/ui/card-description.astro';
+import CardContent from '../components/ui/card-content.astro';
+import CardAction from '../components/ui/card-action.astro';
+import Button from '../components/ui/button.astro';
+import Checkbox from '../components/ui/checkbox.astro';
+import AccordionSection from '../components/accordion-section.astro';
+import Link from '../components/link.astro';
 
 const LUMA_URL = "https://luma.com/eihyagp4";
 const baseUrl = import.meta.env.BASE_URL;
@@ -19,7 +17,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
 <BaseLayout>
   <div class="flex flex-col items-center gap-8">
-    <Card className="w-full max-w-2xl" client:load>
+    <Card className="w-full max-w-2xl">
       <CardHeader>
         <CardTitle className="text-4xl">Demo Night</CardTitle>
         <CardDescription className="flex items-center gap-2 text-sm">
@@ -29,7 +27,7 @@ const baseUrl = import.meta.env.BASE_URL;
         </CardDescription>
         <CardAction>
           <Link href={LUMA_URL}>
-            <Button client:load>Register now</Button>
+            <Button>Register now</Button>
           </Link>
         </CardAction>
       </CardHeader>
@@ -52,15 +50,15 @@ const baseUrl = import.meta.env.BASE_URL;
         <h2 class="text-2xl">Do you enjoy:</h2>
         <ul class="flex flex-col gap-2 font-medium">
           <li class="flex items-center gap-3">
-            <Checkbox checked client:load />
+            <Checkbox checked />
             <span>Listening to people talk about cool stuff?</span>
           </li>
           <li class="flex items-center gap-3">
-            <Checkbox checked client:load />
+            <Checkbox checked />
             <span>Learning about new ideas, tech, and tools?</span>
           </li>
           <li class="flex items-center gap-3">
-            <Checkbox checked client:load />
+            <Checkbox checked />
             <span>Building your own cool stuff?</span>
           </li>
         </ul>
@@ -73,7 +71,7 @@ const baseUrl = import.meta.env.BASE_URL;
         </p>
       </section>
       <section>
-        <AccordionSection baseUrl={baseUrl} client:only="react" />
+        <AccordionSection baseUrl={baseUrl} />
       </section>
     </div>
   </div>

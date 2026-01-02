@@ -1,0 +1,18 @@
+---
+import { cn } from "@/utils";
+
+interface CardContentProps {
+  className?: string;
+}
+
+const { className = "", ...rest } = Astro.props;
+---
+
+<div
+  data-slot="card-content"
+  class={cn("px-6", className)}
+  {...rest}
+>
+  <slot />
+</div>
+

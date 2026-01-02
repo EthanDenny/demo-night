@@ -1,0 +1,13 @@
+---
+import AccordionTrigger from "./ui/accordion-trigger.astro";
+
+interface AccordionHeaderProps {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<AccordionTrigger className={`pointer-events-none [&>svg]:hidden ${className}`}>
+  <slot />
+</AccordionTrigger>

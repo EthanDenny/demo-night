@@ -1,0 +1,31 @@
+---
+import { buttonVariants } from "./buttonVariants";
+import { cn } from "@/utils";
+
+interface ButtonProps {
+  variant?: "default" | "noShadow" | "neutral" | "reverse";
+  size?: "default" | "sm" | "lg" | "icon";
+  className?: string;
+  type?: "button" | "submit" | "reset";
+}
+
+const {
+  variant = "default",
+  size = "default",
+  className = "",
+  type = "button",
+  ...rest
+} = Astro.props;
+
+const classes = cn("cursor-pointer", buttonVariants({ variant, size, className }));
+---
+
+<button
+  data-slot="button"
+  class={classes}
+  type={type}
+  {...rest}
+>
+  <slot />
+</button>
+

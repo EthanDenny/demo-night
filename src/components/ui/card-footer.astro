@@ -1,0 +1,18 @@
+---
+import { cn } from "@/utils";
+
+interface CardFooterProps {
+  className?: string;
+}
+
+const { className = "", ...rest } = Astro.props;
+---
+
+<div
+  data-slot="card-footer"
+  class={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+  {...rest}
+>
+  <slot />
+</div>
+
