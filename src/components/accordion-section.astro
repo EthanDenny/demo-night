@@ -7,9 +7,9 @@ import Link from "./link.astro";
 import { Image } from 'astro:assets';
 
 // Import the specific images used in this component
-import officeImage from '../assets/images/DSCF1597.jpg';
-import presentationImage from '../assets/images/DSCF1647.jpg';
-import ethanImage from '../assets/images/DSCF1088.jpg';
+import officeImage from '../assets/images/1/DSCF1597.jpg';
+import presentationImage from '../assets/images/1/DSCF1647.jpg';
+import ethanImage from '../assets/images/1/DSCF1088.jpg';
 
 interface AccordionSectionProps {
   baseUrl: string;
@@ -43,8 +43,7 @@ const LUMA_URL = "https://luma.com/eihyagp4";
         href="/demo-night/gallery"
         class="font-bold underline cursor-pointer"
       >gallery</a>
-      of past events, as well as on
-      <Link href="https://jack.camera/demo-night-2-nov2025/">jack.camera/demo-night-2-nov2025</Link>.
+      of past events! 📸
     </AccordionContent>
   </AccordionItem>
   <AccordionItem>
@@ -74,8 +73,7 @@ const LUMA_URL = "https://luma.com/eihyagp4";
           in nature, and you built or created it in some way.
         </li>
         <li>
-          Presentations should be about 6-8 minutes long, and no more than
-          ten.
+          Presentations should be about 5 minutes long, but we might have time for more, depending on the number of presenters!
         </li>
         <li>
           Other than that, it can be anything you want – from functional
@@ -98,11 +96,10 @@ const LUMA_URL = "https://luma.com/eihyagp4";
     <AccordionHeader>Who's organizing it?</AccordionHeader>
     <AccordionContent>
       Demo Night is brought to you by
-      <Link href="https://ethandenny.dev">Ethan Denny</Link>,
-      <Link href="https://jackharrhy.dev">Jack Harrhy</Link>, and the fine
-      folks at <Link href="https://spellbook.com">Spellbook</Link>. Gallery photos
-      by
-      <Link href="https://www.instagram.com/thecrypticcanadian/">Ethan Crann</Link>.
+      <Link href="https://ethandenny.dev">Ethan Denny</Link> and
+      <Link href="https://jackharrhy.dev">Jack Harrhy</Link>, with our hosting space provided by the fine
+      folks at <Link href="https://spellbook.com">Spellbook</Link>.
+      Gallery photos taken by <Link href="https://www.instagram.com/thecrypticcanadian/">Ethan Crann</Link> and <Link href="https://jack.camera">Jack</Link>.
     </AccordionContent>
   </AccordionItem>
 </Accordion>

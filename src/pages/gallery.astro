@@ -2,14 +2,20 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 
-// Import all images from assets directory using Vite glob
-const imageModules = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.jpg', { 
+// Import all images from assets directory using Vite glob (recursive)
+const imageModules = import.meta.glob<{ default: ImageMetadata }>('../assets/images/**/*.jpg', { 
   eager: true 
 });
 
 // Convert glob results to array with filenames and image metadata
 const images = Object.entries(imageModules).map(([path, module]) => {
   const filename = path.split('/').pop() || '';
+  // Extract directory number from path (e.g., '../assets/images/1/DSCF1088.jpg' -> '1')
+  const pathParts = path.split('/');
+  const directoryIndex = pathParts.indexOf('images');
+  const directoryNumber = directoryIndex >= 0 && directoryIndex < pathParts.length - 1 
+    ? pathParts[directoryIndex + 1] 
+    : '';
   const image = module.default;
   const aspectRatio = image.width && image.height 
     ? `${image.width}/${image.height}`
@@ -18,11 +24,23 @@ const images = Object.entries(imageModules).map(([path, module]) => {
     filename,
     image,
     aspectRatio,
+    directoryNumber,
   };
 });
 
 // Shuffle the images
 const shuffledImages = [...images].sort(() => Math.random() - 0.5);
+
+const getDemoNightDate = (directoryNumber: string) => {
+  switch (directoryNumber) {
+    case '1':
+      return 'August 2025';
+    case '2':
+      return 'November 2025';
+    case '3':
+      return 'February 2026';
+  }
+};
 ---
 
 <BaseLayout title="Gallery | Demo Night">
@@ -32,6 +50,7 @@ const shuffledImages = [...images].sort(() => Math.random() - 0.5);
         <div 
           class="w-full rounded overflow-hidden"
           style={`aspect-ratio: ${item.aspectRatio};`}
+          title={`Demo Night ${item.directoryNumber} (${getDemoNightDate(item.directoryNumber)})`}
         >
           <Image
             src={item.image}
