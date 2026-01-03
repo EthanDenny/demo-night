@@ -1,0 +1,7 @@
+:80 {
+	root * /usr/share/caddy
+	
+	handle_path /* {
+		file_server
+	}
+}
