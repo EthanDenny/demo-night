@@ -1,17 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Card from '../components/ui/card.astro';
-import CardHeader from '../components/ui/card-header.astro';
-import CardTitle from '../components/ui/card-title.astro';
-import CardDescription from '../components/ui/card-description.astro';
-import CardContent from '../components/ui/card-content.astro';
-import CardAction from '../components/ui/card-action.astro';
-import Button from '../components/ui/button.astro';
-import Checkmark from '../components/ui/checkmark.astro';
-import AccordionSection from '../components/accordion-section.astro';
-import Link from '../components/link.astro';
-import { Image } from 'astro:assets';
-import presentationImage from '../assets/images/1/DSCF1306.jpg';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/ui/card.astro";
+import CardHeader from "../components/ui/card-header.astro";
+import CardTitle from "../components/ui/card-title.astro";
+import CardDescription from "../components/ui/card-description.astro";
+import CardContent from "../components/ui/card-content.astro";
+import CardAction from "../components/ui/card-action.astro";
+import Button from "../components/ui/button.astro";
+import Checkmark from "../components/ui/checkmark.astro";
+import AccordionSection from "../components/accordion-section.astro";
+import Link from "../components/link.astro";
+import { Image } from "astro:assets";
+import presentationImage from "../assets/images/1/DSCF1306.jpg";
 
 const LUMA_URL = "https://luma.com/eihyagp4";
 const baseUrl = import.meta.env.BASE_URL;
@@ -40,7 +40,9 @@ const baseUrl = import.meta.env.BASE_URL;
         </p>
       </CardContent>
     </Card>
-    <div class="flex flex-col justify-start gap-8 w-full max-w-2xl px-[calc(1.5rem+var(--spacing-boxShadowX))]">
+    <div
+      class="flex flex-col justify-start gap-8 w-full max-w-2xl px-[calc(1.5rem+var(--spacing-boxShadowX))]"
+    >
       <section>
         <Image
           src={presentationImage}
@@ -76,7 +78,7 @@ const baseUrl = import.meta.env.BASE_URL;
         </p>
       </section>
       <section>
-        <AccordionSection baseUrl={baseUrl} />
+        <AccordionSection />
       </section>
     </div>
   </div>
