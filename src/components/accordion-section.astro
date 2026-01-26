@@ -12,7 +12,8 @@ import presentationImage from "../assets/images/1/DSCF1647.jpg";
 import ethanImage from "../assets/images/1/DSCF1088.jpg";
 
 const LOCATION_URL = "https://maps.app.goo.gl/6TgEU4BhV6quZCf49";
-const LUMA_URL = "https://luma.com/fpgrzjc5";
+
+const { lumaUrl } = Astro.props;
 ---
 
 <Accordion className="flex flex-col gap-8">
@@ -27,7 +28,7 @@ const LUMA_URL = "https://luma.com/fpgrzjc5";
   <AccordionItem>
     <AccordionHeader> How can I sign up to present / attend? </AccordionHeader>
     <AccordionContent>
-      Registration for the next event is <Link href={LUMA_URL}>here</Link>. No
+      Registration for the next event is <Link href={lumaUrl}>here</Link>. No
       matter if you're presenting or only coming to watch, we encourage you to
       register so we can get an accurate headcount.
     </AccordionContent>
