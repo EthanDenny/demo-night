@@ -8,12 +8,17 @@ import CardContent from "../components/ui/card-content.astro";
 import CardAction from "../components/ui/card-action.astro";
 import Button from "../components/ui/button.astro";
 import Checkmark from "../components/ui/checkmark.astro";
-import AccordionSection from "../components/accordion-section.astro";
-import Link from "../components/link.astro";
+import Accordion from "../components/ui/accordion.astro";
+import AccordionItem from "../components/ui/accordion-item.astro";
+import AccordionContent from "../components/ui/accordion-content.astro";
 import { Image } from "astro:assets";
 import presentationImage from "../assets/images/1/DSCF1306.jpg";
+import image1 from "../assets/images/1/DSCF1597.jpg";
+import image2 from "../assets/images/2/alex-presenting-2.jpg";
+import image3 from "../assets/images/3/DSCF2647.jpg";
 
 const LUMA_URL = "https://luma.com/fpgrzjc5";
+const LOCATION_URL = "https://maps.app.goo.gl/6TgEU4BhV6quZCf49";
 ---
 
 <BaseLayout title="Home | Demo Night">
@@ -27,9 +32,9 @@ const LUMA_URL = "https://luma.com/fpgrzjc5";
           <span class="italic">{`/ˈdemō nīt/`}</span>
         </CardDescription>
         <CardAction>
-          <Link href={LUMA_URL}>
+          <a href={LUMA_URL} target="_blank" class="font-bold underline">
             <Button>Register now</Button>
-          </Link>
+          </a>
         </CardAction>
       </CardHeader>
       <CardContent>
@@ -77,7 +82,134 @@ const LUMA_URL = "https://luma.com/fpgrzjc5";
         </p>
       </section>
       <section>
-        <AccordionSection lumaUrl={LUMA_URL} />
+        <Accordion className="flex flex-col gap-8">
+          <AccordionItem>
+            <div
+              class="flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border w-full bg-main p-4 font-heading rounded-b-none border-b-2"
+            >
+              When is it?
+            </div>
+            <AccordionContent>
+              Demo Night 4 is coming this summer!
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem>
+            <div
+              class="flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border w-full bg-main p-4 font-heading rounded-b-none border-b-2"
+            >
+              {" "}How can I sign up to present / attend?{" "}
+            </div>
+            <AccordionContent>
+              Registration for the <i>last</i> event is <a
+                href={LUMA_URL}
+                target="_blank"
+                class="font-bold underline">here</a
+              >. No matter if you're presenting or only coming to watch, we
+              encourage you to register so we can get an accurate headcount.
+            </AccordionContent>
+          </AccordionItem>
+          <Image
+            src={image1}
+            alt="Photo of the Spellbook office"
+            class="rounded-base w-full"
+            width={1200}
+            quality={85}
+            format="webp"
+          />
+          <AccordionItem>
+            <div
+              class="flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border w-full bg-main p-4 font-heading rounded-b-none border-b-2"
+            >
+              What are the vibes like?
+            </div>
+            <AccordionContent>
+              See more pictures in our
+              <a
+                href="/demo-night/gallery"
+                class="font-bold underline cursor-pointer"
+              >
+                gallery
+              </a>
+              of past events! 📸
+            </AccordionContent>
+          </AccordionItem>
+          <Image
+            src={image2}
+            alt="Photo of a presentation at Demo Night"
+            class="rounded-base w-full"
+            width={1200}
+            quality={85}
+            format="webp"
+          />
+          <AccordionItem>
+            <div
+              class="flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border w-full bg-main p-4 font-heading rounded-b-none border-b-2"
+            >
+              What are the rules?
+            </div>
+            <AccordionContent>
+              <ul class="list-disc pl-4 space-y-2">
+                <li>
+                  You can present about anything you want, as long as it's
+                  technical in nature, and you built or created it in some way.
+                </li>
+                <li>
+                  Presentations should be about 5-10 minutes long. We're
+                  limiting the time to keep the event moving along and allow
+                  more people to present.
+                </li>
+                <li>
+                  Other than that, it can be anything you want - from functional
+                  programming, a neat AI tool you've been using, or about an
+                  <code class="italic">[insert niche topic here]</code> that you're
+                  really interested in.
+                </li>
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <Image
+            src={image3}
+            alt="Photo of Ethan Denny"
+            class="rounded-base w-full"
+            width={1200}
+            quality={85}
+            format="webp"
+          />
+          <AccordionItem>
+            <div
+              class="flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border w-full bg-main p-4 font-heading rounded-b-none border-b-2"
+            >
+              Who's organizing it?
+            </div>
+            <AccordionContent>
+              Demo Night is brought to you by
+              <a
+                href="https://ethandenny.dev"
+                target="_blank"
+                class="font-bold underline">Ethan Denny</a
+              >, with special thanks to Jack Harrhy, Scott Stevenson, Adam
+              Keating, Emily Murphy, Sarah Canning, and Alex Gaudon for
+              everything they've done to make this possible. Gallery photos by
+              <a
+                href="https://www.instagram.com/thecrypticcanadian/"
+                target="_blank"
+                class="font-bold underline">Ethan Crann</a
+              > and <a
+                href="https://jack.camera"
+                target="_blank"
+                class="font-bold underline">Jack</a
+              >. Hosting spaces (and pizza 🍕) provided by the fine folks at <a
+                href="https://spellbook.com"
+                target="_blank"
+                class="font-bold underline">Spellbook</a
+              > and <a
+                href="https://www.colabsoftware.com/"
+                target="_blank"
+                class="font-bold underline">CoLab</a
+              >.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </section>
     </div>
   </div>
