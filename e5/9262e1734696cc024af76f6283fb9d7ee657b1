@@ -1,0 +1,14 @@
+.gitignore
+  h_af2c90ed80580c 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "e59262e1734696cc024af76f6283fb9d7ee657b1",
+  "prompts": {},
+  "humans": {
+    "h_af2c90ed80580c": {
+      "author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
