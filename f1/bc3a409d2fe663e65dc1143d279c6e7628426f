@@ -1,0 +1,19 @@
+Dockerfile
+  s_2bf8adfa25b1ba::t_07ef2194b62ed8 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "f1bc3a409d2fe663e65dc1143d279c6e7628426f",
+  "prompts": {},
+  "sessions": {
+    "s_2bf8adfa25b1ba": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "639d338a-aef6-4a6f-9b6a-5c7fdc131de7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
