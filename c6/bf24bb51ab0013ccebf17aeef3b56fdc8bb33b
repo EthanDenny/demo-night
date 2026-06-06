@@ -1,0 +1,41 @@
+eslint.config.js
+  s_55baac455d644d::t_0de6c0bb8654c7 7
+.gitignore
+  h_af2c90ed80580c 14
+src/components/ui/card-description.astro
+  s_55baac455d644d::t_eea92860108a4f 4
+package.json
+  s_55baac455d644d::t_9fff59c5b83a25 26
+  s_55baac455d644d::t_00ae6559fbb75d 7-9
+src/components/ui/card.astro
+  s_55baac455d644d::t_4d92aa881db846 4
+src/components/ui/card-title.astro
+  s_55baac455d644d::t_1bb54b1331770a 4
+src/components/ui/accordion.astro
+  s_55baac455d644d::t_73c451063144bb 2
+src/components/ui/button.astro
+  s_55baac455d644d::t_89fd6e386412d9 5
+.nvmrc
+  s_55baac455d644d::t_a95db9a4a5d1ed 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "c6bf24bb51ab0013ccebf17aeef3b56fdc8bb33b",
+  "prompts": {},
+  "humans": {
+    "h_af2c90ed80580c": {
+      "author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  },
+  "sessions": {
+    "s_55baac455d644d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "27852f03-1690-440e-8d38-5d926392427c",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
