@@ -1,0 +1,26 @@
+src/pages/index.astro
+  s_2bf8adfa25b1ba::t_16bc09b86b3c0a 21,93-99
+  h_af2c90ed80580c 20
+  s_2bf8adfa25b1ba::t_fc808d5c029883 109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "daaabab6f332ca1f74c6ac37f9aa1925773b9966",
+  "prompts": {},
+  "humans": {
+    "h_af2c90ed80580c": {
+      "author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  },
+  "sessions": {
+    "s_2bf8adfa25b1ba": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "639d338a-aef6-4a6f-9b6a-5c7fdc131de7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
