@@ -1,0 +1,19 @@
+src/pages/gallery.astro
+  s_304a244ab9dff2::t_71da5ad7833edb 42-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "e705b1716203955ea097e207d8b460c47d5c49d2",
+  "prompts": {},
+  "sessions": {
+    "s_304a244ab9dff2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06756-56b1-72d1-afa5-41d0dce103a7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
